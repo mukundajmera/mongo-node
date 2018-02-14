@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome to public domain</title>
-	<% include partials/header.html %>
+	<title>Welcome to My app</title>
+	<link rel="stylesheet" type="text/css" href="css/header.css">
 </head>
 <body bgcolor="lightblue">
 	<% include partials/navigation.html %>
 <br><br>
 <br><br>
-<form action="/insert_comments" method="post" accept-charset="utf-8">
-	<table align="center" cellpadding="10pxa">
-		<caption>Welcome enter your comments</caption>
+<h1>Welcome to login page</h1>
+
+<form action="/login_check" method="post" accept-charset="utf-8">
+<% if(error){ %>
+<h2 align="center"> <%= error %></h2>
+<% } %>
+	<table align="center" cellpadding="10px">
 		<thead>
 			<tr>
-				<th colspan="2">Details</th>
+				<th colspan="2">Welcome enter your credentials</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>Name</td>
-				<td><input type="text" required name="name" style="width: 200px;"></td>
-			</tr>
-			<tr>
-				<td>Comment</td>
-				<td><textarea name="comment" required style="width: 200px;"></textarea></td>
-			</tr>
 			<tr>
 				<td>Email</td>
 				<td><input type="email" required name="email" style="width: 200px;"></td>
 			</tr>
 			<tr>
+				<td>Password</td>
+				<td><input type="password" required name="password" style="width: 200px;"></td>
+			</tr>
+			<tr>
 				<td colspan="2" align="center">
-				<input type="submit" value="comment" name="submit">
+				<input type="submit" value="Sign in" name="submit">
+				&emsp; For Sign up <a href="/signup"> Click Here</a>
 				</td>
 			</tr>
 		</tbody>

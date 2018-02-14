@@ -1,0 +1,12 @@
+//db
+use student
+
+
+//collection with insert
+db.info.insert([{name:"Mukund Ajmera",email:"mukundajmera94@gmail.com",password:"admin"},{name:"Navneet Kumar",email:"nav@gmail.com",password:"navneet"},{name:"Akhil Raja",email:"Akhil@gmail.com",password:"akhil123"},{name:"Judith Kaushik",email:"judulala@yahoo.com",password:"kaushik123"}])
+
+
+//check results
+db.info.find().pretty();
+
+

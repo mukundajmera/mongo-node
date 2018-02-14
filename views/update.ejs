@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to My app</title>
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+<body bgcolor="lightblue">
+	<% include partials/navigation.html %>
+<br><br>
+<br><br>
+<h1>Update the Information</h1>
+<form action="/updating" method="post" accept-charset="utf-8">
+	<table align="center" cellpadding="3" cellspacing="3" width="300px" height="300px">
+		<thead>
+			<tr>
+				<th colspan="2">Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Name:-</td>
+				<td>
+					<input type="text" required name="old_name" hidden="hidden" value='<%= name %>' >
+					<input type="text" required name="name" value='<%= name %>' style="width:200px"></td>
+			</tr>
+			<tr>
+				<td>Email:-</td>
+				<td>
+					<input type="email" required name="old_email" hidden="hidden" value='<%= email %>' >
+					<input type="email" required name="email" value='<%= email %>' style="width:200px"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Update" name="update"></td>
+			</tr>
+		</tbody>
+	</table>
+</form>
+<br><br>
+<br><br>
+		<% include partials/footer.html %>
+</body>
+</html>

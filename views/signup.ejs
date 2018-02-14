@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to My app</title>
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+<body bgcolor="lightblue">
+	<% include partials/navigation.html %>
+<br><br>
+<br><br>
+<h1>Welcome to Sign Up here</h1>
+
+<form action="/signup" method="post" accept-charset="utf-8">
+	<table cellpadding="2" cellspacing="2" align="center">
+			<thead>
+				<tr >
+					<th colspan="2">Enter your details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="name" required></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="email" name="email" required></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" required></td>
+				</tr>
+				<tr>
+					<td>Confirm Password</td>
+					<td><input type="password" name="password_c" required></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="register" name="register">
+					</td>
+				</tr>
+			</tbody>
+		</table>	
+</form>
+<br><br>
+<br><br>
+		<% include partials/footer.html %>
+</body>
+</html>

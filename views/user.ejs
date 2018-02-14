@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to My app</title>
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+</head>
+<body bgcolor="lightblue">
+	<% include partials/navigation.html %>
+<br><br>
+<br><br>
+	<table cellspacing="2" align="center" border="2">
+		<thead>
+			<tr>
+				<th colspan="2">User Information</th>
+				<th rowspan="2">Update link</th>
+				<th rowspan="2">Delete User</th>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td>data</td>
+			</tr>
+		</thead>
+		<%  user.forEach( function(row) {
+		 %>
+			<tr>
+				<td><%= row.name %></td>
+				<td><%= row.email %></td>
+				<td><a href='/update?name=<%= row.name %>&email=<%= row.email %>' >update</a>
+				<td><a href='/delete?name=<%= row.name %>&email=<%= row.email %>' >delete</a>
+				</td>
+			</tr>
+			<% }); %>
+		<tbody>
+		</tbody>
+	</table>
+<br><br>
+<br><br>
+		<% include partials/footer.html %>
+</body>
+</html>
