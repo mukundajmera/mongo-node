@@ -15,7 +15,9 @@ var port = process.env.PORT || 80;
 
 var app = express();
 
+//setting session cookie for server side
 app.use(session({secret: 'mukund',resave: true,saveUninitialized: true}));
+
 
 
 //setting template to views as ejs
@@ -59,11 +61,21 @@ app.get('/signup',routes.signup);
 //for inserting the user info in the db
 app.post('/signup',routes.register);
 
-
+//deleting the user
 app.get('/delete',routes.delete);
 
 // to get comments from post request and call same name insert_comments fx
 // app.post('/insert_comments',routes.insert_comments);
+
+
+
+//trying to work with pdf and all things making them together
+var pdf = require('./routes/pdf-working.js');
+
+
+app.get('/text2pdf',pdf.start);
+
+app.post('/text2pdf',pdf.process);
 
 app.listen(port,function(){
 	console.log('Listening on port '+port);

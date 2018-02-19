@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to My app</title>
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body bgcolor="lightblue">
+	<% include partials/navigation.html %>
+<br><br>
+<br><br>
+<h1>Welcome to Convertor</h1>
+
+
+	<form action="/text2pdf" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+		<input type="file"  name="check">
+		<br>
+		<input type="submit" value="upload" name="upload">		
+
+	</form>
+
+<br><br>
+<br><br>
+		<% include partials/footer.html %>
+</body>
+</html>
